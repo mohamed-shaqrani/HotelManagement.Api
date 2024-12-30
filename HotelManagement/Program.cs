@@ -4,6 +4,7 @@ using Food.App.API.Extensions;
 using HotelManagement.Config;
 using HotelManagement.Core.ViewModels.Authentication;
 using HotelManagement.Extensions;
+using HotelManagement.Middlewares;
 using HotelManagement.Repository;
 using Microsoft.EntityFrameworkCore;
 
@@ -35,6 +36,17 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseStaticFiles();
+
+
+app.MapControllers();
+
+
+#region Custom Middleware
+app.UseMiddleware<GlobalErrorHandlerMiddleware>();
+app.UseMiddleware<TransactionMiddleware>();
+#endregion
 
 app.UseAuthorization();
 
