@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 
-namespace HotelManagement.App.Core.Interfaces.Services;
+namespace HotelManagement.Core.Interfaces.Services;
 public interface IImageService
 {
     Task<string> UploadImage(IFormFile imageFile, string folderName);

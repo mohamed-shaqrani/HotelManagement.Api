@@ -1,9 +1,9 @@
-﻿using HotelManagement.App.Core.ViewModels;
-using HotelManagement.App.Core.ViewModels.Authentication;
-using HotelManagement.App.Core.ViewModels.Response;
-using HotelManagement.App.Core.ViewModels.Users;
+﻿using HotelManagement.Core.ViewModels;
+using HotelManagement.Core.ViewModels.Authentication;
+using HotelManagement.Core.ViewModels.Response;
+using HotelManagement.Core.ViewModels.Users;
 
-namespace HotelManagement.App.Core.Interfaces.Services;
+namespace HotelManagement.Core.Interfaces.Services;
 public interface IAuthenticationService
 {
     ResponseViewModel<IEnumerable<UserViewModel>> GetAllUsers();

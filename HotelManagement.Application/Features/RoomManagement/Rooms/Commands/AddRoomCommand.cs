@@ -1,8 +1,8 @@
-﻿using HotelManagement.App.Core.Interfaces;
+﻿using HotelManagement.Core.Interfaces;
 using HotelManagement.Core.Models.RoomManagement;
 using MediatR;
 
-namespace HotelManagement.Application.Models.RoomManagement.Rooms.Commands;
+namespace HotelManagement.ication.Models.RoomManagement.Rooms.Commands;
 public record AddRoomCommand(string name, string description) : IRequest<bool>;
 public class AddRoomCommandHandler : IRequestHandler<AddRoomCommand, bool>
 {

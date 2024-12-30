@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using HotelManagement.App.Core.Entities;
-using HotelManagement.App.Core.ViewModels;
-using HotelManagement.App.Core.ViewModels.Users;
+using HotelManagement.Core.Entities;
+using HotelManagement.Core.ViewModels;
+using HotelManagement.Core.ViewModels.Users;
 
-namespace HotelManagement.App.Core.MappingProfiles;
+namespace HotelManagement.Core.MappingProfiles;
 public class UserProfile : Profile
 {
     public UserProfile()

@@ -1,5 +1,5 @@
 ﻿
-namespace HotelManagement.App.Core.ViewModels;
+namespace HotelManagement.Core.ViewModels;
 public class UserViewModel
 {
     public int Id { get; set; }

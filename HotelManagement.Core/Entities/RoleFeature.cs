@@ -1,5 +1,5 @@
-﻿using HotelManagement.App.Core.Entities;
-using HotelManagement.App.Core.Enums;
+﻿using HotelManagement.Core.Entities;
+using HotelManagement.Core.Enums;
 
 namespace HotelManagement.Core.Entities;
 public class RoleFeature : BaseEntity

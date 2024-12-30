@@ -1,14 +1,14 @@
 ﻿using AutoMapper.QueryableExtensions;
-using HotelManagement.App.Core.Entities;
-using HotelManagement.App.Core.Enums;
-using HotelManagement.App.Core.Interfaces;
-using HotelManagement.App.Core.Interfaces.Services;
-using HotelManagement.App.Core.MappingProfiles;
-using HotelManagement.App.Core.ViewModels;
-using HotelManagement.App.Core.ViewModels.Authentication;
-using HotelManagement.App.Core.ViewModels.Response;
-using HotelManagement.App.Core.ViewModels.Users;
-using HotelManagement.App.Service.PasswordHasherServices;
+using HotelManagement.Core.Entities;
+using HotelManagement.Core.Enums;
+using HotelManagement.Core.Interfaces;
+using HotelManagement.Core.Interfaces.Services;
+using HotelManagement.Core.MappingProfiles;
+using HotelManagement.Core.ViewModels;
+using HotelManagement.Core.ViewModels.Authentication;
+using HotelManagement.Core.ViewModels.Response;
+using HotelManagement.Core.ViewModels.Users;
+using HotelManagement.Service.PasswordHasherServices;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -16,7 +16,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace HotelManagement.App.Service;
+namespace HotelManagement.Service;
 public class AuthenticationService : IAuthenticationService
 {
     private readonly IUnitOfWork _unitOfWork;

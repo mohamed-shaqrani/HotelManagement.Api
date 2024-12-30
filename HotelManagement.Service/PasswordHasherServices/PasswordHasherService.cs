@@ -1,6 +1,6 @@
 ﻿using System.Security.Cryptography;
 
-namespace HotelManagement.App.Service.PasswordHasherServices
+namespace HotelManagement.Service.PasswordHasherServices
 {
     public static class PasswordHasherService
     {

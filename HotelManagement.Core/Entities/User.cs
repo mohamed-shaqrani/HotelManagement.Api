@@ -1,7 +1,7 @@
-﻿using HotelManagement.App.Core.Enums;
+﻿using HotelManagement.Core.Enums;
 using System.ComponentModel.DataAnnotations;
 
-namespace HotelManagement.App.Core.Entities;
+namespace HotelManagement.Core.Entities;
 
 public class User : BaseEntity
 {

@@ -1,9 +1,9 @@
 ﻿
-using HotelManagement.App.Core.Entities;
-using HotelManagement.App.Core.Enums;
+using HotelManagement.Core.Entities;
+using HotelManagement.Core.Enums;
 using Microsoft.EntityFrameworkCore;
 
-namespace HotelManagement.App.Repository;
+namespace HotelManagement.Repository;
 
 public class AppDbContext : DbContext
 {

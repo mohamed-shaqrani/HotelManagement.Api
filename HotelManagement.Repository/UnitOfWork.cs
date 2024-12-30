@@ -1,8 +1,8 @@
-﻿using HotelManagement.App.Core.Entities;
-using HotelManagement.App.Core.Interfaces;
+﻿using HotelManagement.Core.Entities;
+using HotelManagement.Core.Interfaces;
 using System.Collections;
 
-namespace HotelManagement.App.Repository;
+namespace HotelManagement.Repository;
 public class UnitOfWork : IUnitOfWork
 {
     private readonly AppDbContext _appDbContext;

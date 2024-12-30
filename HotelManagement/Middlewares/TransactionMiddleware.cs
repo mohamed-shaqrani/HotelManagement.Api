@@ -1,4 +1,4 @@
-﻿using HotelManagement.App.Repository;
+﻿using HotelManagement.Repository;
 using Microsoft.EntityFrameworkCore.Storage;
 
 namespace HotelManagement.Middlewares;

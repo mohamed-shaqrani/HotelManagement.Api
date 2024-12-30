@@ -1,10 +1,10 @@
-﻿using HotelManagement.App.Core.Entities;
-using HotelManagement.App.Core.Interfaces;
+﻿using HotelManagement.Core.Entities;
+using HotelManagement.Core.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System.Linq.Expressions;
 
-namespace HotelManagement.App.Repository;
+namespace HotelManagement.Repository;
 public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseEntity
 {
     private readonly AppDbContext _appDbContext;

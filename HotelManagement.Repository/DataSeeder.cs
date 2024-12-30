@@ -1,7 +1,7 @@
-﻿using HotelManagement.App.Core.Entities;
-using HotelManagement.App.Core.Enums;
+﻿using HotelManagement.Core.Entities;
+using HotelManagement.Core.Enums;
 
-namespace HotelManagement.App.Repository;
+namespace HotelManagement.Repository;
 public static class DataSeeder
 {
     public static async Task SeedUsers(AppDbContext appDbContext)

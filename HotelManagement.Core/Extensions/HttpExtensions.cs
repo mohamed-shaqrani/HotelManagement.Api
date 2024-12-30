@@ -1,9 +1,9 @@
-﻿using HotelManagement.App.Core.Helpers;
-using HotelManagement.App.Repository.Helpers;
+﻿using HotelManagement.Core.Helpers;
+using HotelManagement.Repository.Helpers;
 using Microsoft.AspNetCore.Http;
 using System.Text.Json;
 
-namespace HotelManagement.App.Core.Extensions;
+namespace HotelManagement.Core.Extensions;
 
 public static class HttpExtensions
 {

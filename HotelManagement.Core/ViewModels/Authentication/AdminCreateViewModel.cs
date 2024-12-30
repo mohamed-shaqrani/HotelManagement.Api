@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HotelManagement.App.Core.ViewModels.Authentication
+namespace HotelManagement.Core.ViewModels.Authentication
 {
     public class AdminCreateViewModel
     {

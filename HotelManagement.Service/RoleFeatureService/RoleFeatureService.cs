@@ -1,8 +1,8 @@
-﻿using HotelManagement.App.Core.Enums;
-using HotelManagement.App.Core.Interfaces;
-using HotelManagement.Core.Entities;
+﻿using HotelManagement.Core.Entities;
+using HotelManagement.Core.Enums;
+using HotelManagement.Core.Interfaces;
 
-namespace HotelManagement.App.Service.RoleFeatureService;
+namespace HotelManagement.Service.RoleFeatureService;
 public class RoleFeatureService : IRoleFeatureService
 {
     private readonly IUnitOfWork _UnitOfWork;

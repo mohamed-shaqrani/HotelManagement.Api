@@ -1,4 +1,4 @@
-﻿using HotelManagement.App.Core.Entities;
+﻿using HotelManagement.Core.Entities;
 
 namespace HotelManagement.Core.Entities.RoomManagement;
 public class RoomType : BaseEntity

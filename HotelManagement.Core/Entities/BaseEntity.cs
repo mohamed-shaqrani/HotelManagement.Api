@@ -1,4 +1,4 @@
-﻿namespace HotelManagement.App.Core.Entities;
+﻿namespace HotelManagement.Core.Entities;
 public class BaseEntity
 {
     public int Id { get; set; }

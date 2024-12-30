@@ -1,4 +1,4 @@
-﻿namespace HotelManagement.App.Core.ViewModels.Users
+﻿namespace HotelManagement.Core.ViewModels.Users
 {
     public class UserCreateViewModel
     {

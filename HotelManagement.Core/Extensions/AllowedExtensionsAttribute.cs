@@ -1,8 +1,8 @@
-﻿//using HotelManagement.App.Core.FileSetting;
+﻿//using HotelManagement.Core.FileSetting;
 //using Microsoft.AspNetCore.Http.Internal;
 //using System.ComponentModel.DataAnnotations;
 
-//namespace HotelManagement.App.Core.Extensions;
+//namespace HotelManagement.Core.Extensions;
 //public class AllowedExtensionsAttribute : ValidationAttribute
 //{
 //    private readonly string _allowedExtensions;

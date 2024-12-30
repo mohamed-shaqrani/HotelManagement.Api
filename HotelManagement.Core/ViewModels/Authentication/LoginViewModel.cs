@@ -1,4 +1,4 @@
-﻿namespace HotelManagement.App.Core.ViewModels.Authentication
+﻿namespace HotelManagement.Core.ViewModels.Authentication
 {
     public class LoginViewModel
     {

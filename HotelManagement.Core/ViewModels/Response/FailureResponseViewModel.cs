@@ -1,7 +1,7 @@
-﻿using HotelManagement.App.Core.Enums;
-using HotelManagement.App.Core.Validation;
+﻿using HotelManagement.Core.Enums;
+using HotelManagement.Core.Validation;
 
-namespace HotelManagement.App.Core.ViewModels.Response;
+namespace HotelManagement.Core.ViewModels.Response;
 
 public class FailureResponseViewModel<T> : ResponseViewModel<T>
 {

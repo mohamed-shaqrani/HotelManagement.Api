@@ -1,9 +1,9 @@
 ﻿using Autofac;
-using HotelManagement.App.Core.Interfaces;
-using HotelManagement.App.Repository;
-using HotelManagement.App.Service;
+using HotelManagement.Core.Interfaces;
+using HotelManagement.Repository;
+using HotelManagement.Service;
 
-namespace Food.App.API.Config;
+namespace HotelManagement.Config;
 
 public class AutofacModule : Module
 {

@@ -1,5 +1,5 @@
-﻿using HotelManagement.App.Core.Interfaces.Services;
-using HotelManagement.App.Service.SendEmail;
+﻿using HotelManagement.Core.Interfaces.Services;
+using HotelManagement.Service.SendEmail;
 using Microsoft.Extensions.Options;
 using System.Net;
 using System.Net.Mail;

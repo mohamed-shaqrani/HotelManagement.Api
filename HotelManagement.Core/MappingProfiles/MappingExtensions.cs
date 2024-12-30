@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace HotelManagement.App.Core.MappingProfiles;
+namespace HotelManagement.Core.MappingProfiles;
 public static class MappingExtensions
 {
     public static IMapper Mapper;

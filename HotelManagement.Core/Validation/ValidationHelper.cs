@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using FluentValidation.Results;
 
-namespace HotelManagement.App.Core.Validation;
+namespace HotelManagement.Core.Validation;
 public static class ValidationHelper
 {
     public static void ValidateArgumentsNullOrEmpty(params object[] arguments)

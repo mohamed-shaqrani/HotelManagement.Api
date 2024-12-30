@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace HotelManagement.App.Core.Helpers;
+namespace HotelManagement.Core.Helpers;
 
 public class PageList<T> : List<T>
 {

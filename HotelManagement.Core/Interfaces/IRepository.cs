@@ -1,7 +1,7 @@
-﻿using HotelManagement.App.Core.Entities;
+﻿using HotelManagement.Core.Entities;
 using System.Linq.Expressions;
 
-namespace HotelManagement.App.Core.Interfaces;
+namespace HotelManagement.Core.Interfaces;
 public interface IRepository<TEntity> where TEntity : BaseEntity
 {
     Task AddAsync(TEntity entity);

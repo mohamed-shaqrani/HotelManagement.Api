@@ -1,8 +1,8 @@
-﻿//using HotelManagement.App.Core.FileSetting;
-//using HotelManagement.App.Core.Interfaces.Services;
+﻿//using HotelManagement.Core.FileSetting;
+//using HotelManagement.Core.Interfaces.Services;
 //using Microsoft.AspNetCore.Http;
 
-//namespace HotelManagement.App.Service.ImageService;
+//namespace HotelManagement.Service.ImageService;
 //public class ImageService : IImageService
 //{
 //    private readonly IWebHostEnvironment _environment;

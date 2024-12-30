@@ -1,4 +1,4 @@
-﻿namespace HotelManagement.App.Repository.Helpers;
+﻿namespace HotelManagement.Repository.Helpers;
 
 public class PaginationHeader
 {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace HotelManagement.App.Core.ViewModels.Authentication;
+namespace HotelManagement.Core.ViewModels.Authentication;
 public class VerifyCodeViewModel
 {
     [StringLength(6)]

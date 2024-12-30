@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace HotelManagement.App.Core.ViewModels.Authentication;
+namespace HotelManagement.Core.ViewModels.Authentication;
 public class AuthModel
 {
     public string UserName { get; set; }

@@ -1,5 +1,5 @@
 ﻿
-//namespace HotelManagement.App.Core.FileSetting;
+//namespace HotelManagement.Core.FileSetting;
 //public class FileSettings
 //{
 //    private readonly IWebHostEnire _webHostEnvironment;

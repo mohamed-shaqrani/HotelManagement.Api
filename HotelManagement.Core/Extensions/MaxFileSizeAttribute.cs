@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http.Internal;
 using System.ComponentModel.DataAnnotations;
 
-namespace HotelManagement.App.Core.Extensions;
+namespace HotelManagement.Core.Extensions;
 public class MaxFileSizeAttribute : ValidationAttribute
 {
     private readonly int _maxFileSize;

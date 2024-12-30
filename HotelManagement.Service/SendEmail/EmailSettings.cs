@@ -1,4 +1,4 @@
-﻿namespace HotelManagement.App.Service.SendEmail;
+﻿namespace HotelManagement.Service.SendEmail;
 public class EmailSettings
 {
     public string SMTPServer { get; set; }

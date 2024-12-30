@@ -1,6 +1,6 @@
-﻿using HotelManagement.App.Core.Enums;
+﻿using HotelManagement.Core.Enums;
 
-namespace HotelManagement.App.Core.ViewModels.Response;
+namespace HotelManagement.Core.ViewModels.Response;
 public static class ResponseMessage
 {
     private static readonly Dictionary<SuccessCode, string> SuccessMessages = new()
