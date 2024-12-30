@@ -1,6 +1,4 @@
-﻿using HotelManagement.Core.Entities;
-
-namespace HotelManagement.Core.Entities.RoomManagement;
+﻿namespace HotelManagement.Core.Entities.RoomManagement;
 public class RoomType : BaseEntity
 {
     public decimal Price { get; set; }
