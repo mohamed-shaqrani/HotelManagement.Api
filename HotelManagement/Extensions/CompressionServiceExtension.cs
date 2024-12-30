@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.ResponseCompression;
 
-namespace Food.App.API.Extensions;
+namespace HotelManagement.Extensions;
 
 public static class CompressionServiceExtension
 {
