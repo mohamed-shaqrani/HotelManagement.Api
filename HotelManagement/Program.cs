@@ -1,3 +1,12 @@
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using Food.App.API.Extensions;
+using HotelManagement.Config;
+using HotelManagement.Core.ViewModels.Authentication;
+using HotelManagement.Extensions;
+using HotelManagement.Repository;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,6 +14,17 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddEndpointsApiExplorer();
+
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+builder.Host.ConfigureContainer<ContainerBuilder>(container =>
+{
+    container.RegisterModule(new AutofacModule());
+});
+builder.Services.AddCompressionServices();
+builder.Services.AddIdentityServices(builder.Configuration);
+builder.Services.Configure<JWT>(builder.Configuration.GetSection("JWT"));
 
 var app = builder.Build();
 
