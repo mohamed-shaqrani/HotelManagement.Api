@@ -2,7 +2,7 @@
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
-namespace Food.App.API.Extensions;
+namespace HotelManagement.Extensions;
 
 public static class SecurityExtension
 {

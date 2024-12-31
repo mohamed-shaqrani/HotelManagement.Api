@@ -1,4 +1,7 @@
 ﻿using HotelManagement.Application.Features.RoomManagement.Rooms.Commands;
+using HotelManagement.Application.Features.RoomManagement.Rooms.Query;
+using HotelManagement.Core.Extensions;
+using HotelManagement.Core.Helpers;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,9 +17,19 @@ public class RoomsController : ControllerBase
     {
         _meditor = meditor;
     }
+    [HttpPost]
     public async Task<ActionResult> Add(string name, string desc)
     {
         var res = await _meditor.Send(new AddRoomCommand(name, desc));
+        return Ok(res);
+    }
+    [HttpGet]
+    public async Task<ActionResult> GetAllRooms([FromQuery] RoomParams roomParams)
+    {
+        var query = new GetAllRoomsQuery(roomParams);
+        var res = await _meditor.Send(query);
+        Response.AddPaginationHeader(res.Data);
+
         return Ok(res);
     }
 }
