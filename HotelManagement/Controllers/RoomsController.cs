@@ -1,4 +1,4 @@
-﻿using HotelManagement.ication.Models.RoomManagement.Rooms.Commands;
+﻿using HotelManagement.Application.Features.RoomManagement.Rooms.Commands;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
