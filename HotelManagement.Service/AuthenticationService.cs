@@ -1,5 +1,5 @@
 ﻿using AutoMapper.QueryableExtensions;
-using HotelManagement.Core.Entities;
+using HotelManagement.Core.Entities.UserManagement;
 using HotelManagement.Core.Enums;
 using HotelManagement.Core.Interfaces;
 using HotelManagement.Core.Interfaces.Services;

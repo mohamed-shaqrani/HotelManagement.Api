@@ -1,8 +1,6 @@
-﻿
-using HotelManagement.Core.Entities;
-using HotelManagement.Core.Entities.RoomManagement;
+﻿using HotelManagement.Core.Entities.RoomManagement;
+using HotelManagement.Core.Entities.UserManagement;
 using HotelManagement.Core.Enums;
-using HotelManagement.Core.Models.RoomManagement;
 using Microsoft.EntityFrameworkCore;
 
 namespace HotelManagement.Repository;
@@ -12,6 +10,7 @@ public class AppDbContext : DbContext
     public DbSet<User> Users { get; set; }
     public DbSet<Room> Rooms { get; set; }
     public DbSet<RoomType> RoomTypes { get; set; }
+    public DbSet<RoomImage> RoomImages { get; set; }
 
 
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using HotelManagement.Core.Entities;
+using HotelManagement.Core.Entities.UserManagement;
 using HotelManagement.Core.ViewModels;
 using HotelManagement.Core.ViewModels.Users;
 

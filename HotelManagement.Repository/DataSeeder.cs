@@ -1,4 +1,4 @@
-﻿using HotelManagement.Core.Entities;
+﻿using HotelManagement.Core.Entities.UserManagement;
 using HotelManagement.Core.Enums;
 
 namespace HotelManagement.Repository;

@@ -1,7 +1,6 @@
-﻿using HotelManagement.Core.Entities;
-using HotelManagement.Core.Enums;
+﻿using HotelManagement.Core.Enums;
 
-namespace HotelManagement.Core.Entities;
+namespace HotelManagement.Core.Entities.UserManagement;
 public class RoleFeature : BaseEntity
 {
     public Role Role { get; set; }
