@@ -37,8 +37,13 @@ public static class ResponseMessage
         { ErrorCode.UserPhoneExist, "The specified Phone is already in use." },
         
 
-        // RECIPE
-    
+        // Room
+        { ErrorCode.RoomNameIsRequired, "The room Name is required." },
+        { ErrorCode.RoomDescriptionIsRequired, "The room Description is required." },
+        { ErrorCode.RoomAlreadyExists, "There is a room with the specified Name." },
+        { ErrorCode.RoomIDNotExist, "There is no room with the specified ID." },
+
+
     };
 
 

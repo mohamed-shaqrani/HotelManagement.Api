@@ -15,4 +15,10 @@ public enum ErrorCode
     UserNameExist = 201,
     UserEmailExist = 202,
     UserPhoneExist = 203,
+
+    //Room
+    RoomNameIsRequired = 300,
+    RoomDescriptionIsRequired = 301,
+    RoomAlreadyExists = 302,
+    RoomIDNotExist = 303,
 }
