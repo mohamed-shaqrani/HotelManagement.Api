@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace HotelManagement.Core.Entities.RoomManagement
 {
-    public class FcilityCategory : BaseEntity
+    public class FacilityCategory : BaseEntity
     {
-        public String FacilityCategoryName { get; set; }
+        public String FacilityCategoryName { get; set; } 
     }
 }

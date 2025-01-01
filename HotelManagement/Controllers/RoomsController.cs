@@ -31,5 +31,19 @@ public class RoomsController : ControllerBase
         Response.AddPaginationHeader(res.Data);
 
         return Ok(res);
+
+    }
+
+    [HttpPut("edit/room")]
+
+    public async Task<ActionResult> EditRoom([FromBody] EditRoomCommand command) 
+    {
+        var result = await _meditor.Send(command);
+
+        if (result) 
+        {
+            return Ok("Room is edited successfully");
+        }
+        return BadRequest("Something is wrong ");    
     }
 }

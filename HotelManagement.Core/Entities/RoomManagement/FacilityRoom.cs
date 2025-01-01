@@ -16,5 +16,7 @@ namespace HotelManagement.Core.Entities.RoomManagement
 
         [ForeignKey("Room")]
         public int RoomId { get; set; }
+
+        public Room Room { get; set; }
     }
 }
