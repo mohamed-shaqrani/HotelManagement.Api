@@ -20,20 +20,6 @@ public class RoomsController : ControllerBase
     {
         _meditor = meditor;
     }
-    [HttpPost]
-    public async Task<ResponseViewModel<bool>> Create(RoomCreateViewModel viewModel)
-    {
-        var query = new AddRoomCommand(viewModel.Name, viewModel.Description, viewModel.Price,viewModel.RoomStatus);
-        var res = await _meditor.Send(query);
-        return res;
-        //return await _meditor.Send(new AddRoomCommand(viewModel.Name, viewModel.Description));
-    }
-
-    [HttpDelete]
-    public async Task<ResponseViewModel<bool>> Delete(int id)
-    {
-        return await _meditor.Send(new DeleteRoomCommand(id));
-    }
 
     [HttpGet]
     public async Task<ActionResult> GetAllRooms([FromQuery] RoomParams roomParams)
@@ -43,5 +29,19 @@ public class RoomsController : ControllerBase
         Response.AddPaginationHeader(res.Data);
 
         return Ok(res);
+    }
+
+    [HttpPost]
+    public async Task<ResponseViewModel<bool>> Create(RoomCreateViewModel viewModel)
+    {
+        var query = new AddRoomCommand(viewModel.Name, viewModel.Description, viewModel.Price, viewModel.RoomStatus);
+        var res = await _meditor.Send(query);
+        return res;
+    }
+
+    [HttpDelete]
+    public async Task<ResponseViewModel<bool>> Delete(int id)
+    {
+        return await _meditor.Send(new DeleteRoomCommand(id));
     }
 }
