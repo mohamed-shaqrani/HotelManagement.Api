@@ -6,6 +6,7 @@ public enum ErrorCode
     ValidationError = 01,
     DataBaseError = 02,
 
+
     // AUTH
     ChangePasswordError = 100,
     IncorrectPassword = 101,

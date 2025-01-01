@@ -20,6 +20,14 @@ public class RoomsController : ControllerBase
     {
         _meditor = meditor;
     }
+    [HttpGet("{id}")]
+    public async Task<ActionResult> GetAllRooms(int id)
+    {
+        var query = new GetRoomByIdQuery(id);
+        var res = await _meditor.Send(query);
+
+        return Ok(res);
+    }
 
     [HttpGet]
     public async Task<ActionResult> GetAllRooms([FromQuery] RoomParams roomParams)
