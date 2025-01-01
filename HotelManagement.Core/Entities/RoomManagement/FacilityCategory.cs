@@ -1,6 +1,7 @@
 ﻿namespace HotelManagement.Core.Entities.RoomManagement
 {
-    public class FcilityCategory : BaseEntity
+
+    public class FacilityCategory : BaseEntity
     {
         public String FacilityCategoryName { get; set; }
     }
