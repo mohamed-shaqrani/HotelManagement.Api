@@ -12,6 +12,11 @@ public class AppDbContext : DbContext
     public DbSet<RoomType> RoomTypes { get; set; }
     public DbSet<RoomImage> RoomImages { get; set; }
 
+    public DbSet<Facility> Facilities { get; set; }
+
+    public DbSet<FacilityCategory> FacilityCategories { get; set; }
+
+    public DbSet<FacilityRoom> FacilitiesRooms { get; set; }
 
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
