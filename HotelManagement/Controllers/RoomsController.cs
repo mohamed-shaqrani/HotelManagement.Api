@@ -2,6 +2,9 @@
 using HotelManagement.Application.Features.RoomManagement.Rooms.Query;
 using HotelManagement.Core.Extensions;
 using HotelManagement.Core.Helpers;
+using HotelManagement.Core.ViewModels.Response;
+using HotelManagement.Core.ViewModels.Rooms;
+using HotelManagement.ication.Models.RoomManagement.Rooms.Commands;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,12 +20,15 @@ public class RoomsController : ControllerBase
     {
         _meditor = meditor;
     }
-    [HttpPost]
-    public async Task<ActionResult> Add(string name, string desc)
+    [HttpGet("{id}")]
+    public async Task<ActionResult> GetAllRooms(int id)
     {
-        var res = await _meditor.Send(new AddRoomCommand(name, desc));
+        var query = new GetRoomByIdQuery(id);
+        var res = await _meditor.Send(query);
+
         return Ok(res);
     }
+
     [HttpGet]
     public async Task<ActionResult> GetAllRooms([FromQuery] RoomParams roomParams)
     {
@@ -45,5 +51,19 @@ public class RoomsController : ControllerBase
             return Ok("Room is edited successfully");
         }
         return BadRequest("Something is wrong ");    
+    }
+
+    [HttpPost]
+    public async Task<ResponseViewModel<bool>> Create(RoomCreateViewModel viewModel)
+    {
+        var query = new AddRoomCommand(viewModel.Name, viewModel.Description, viewModel.Price, viewModel.RoomStatus);
+        var res = await _meditor.Send(query);
+        return res;
+    }
+
+    [HttpDelete]
+    public async Task<ResponseViewModel<bool>> Delete(int id)
+    {
+        return await _meditor.Send(new DeleteRoomCommand(id));
     }
 }

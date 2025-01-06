@@ -4,7 +4,7 @@ public enum SuccessCode
 {
     None = 00,
     OperationCompleted = 01,
-
+    OperationSucceeded = 02,
     // AUTH
     ChangePasswordUpdated = 100,
     LoginCorrectly = 101,

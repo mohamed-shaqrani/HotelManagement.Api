@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\ReservationManagement\" />
+    <Folder Include="Features\ReservationManagement\Queries\" />
     <Folder Include="Features\UserManagement\" />
   </ItemGroup>
 

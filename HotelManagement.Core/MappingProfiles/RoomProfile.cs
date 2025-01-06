@@ -9,6 +9,7 @@ public class RoomProfile : Profile
     {
         CreateMap<Room, GetAllRoomViewModel>().ReverseMap();
         CreateMap<GetAllRoomViewModel, Room>();
+        CreateMap<Room, RoomViewModel>().ReverseMap();
 
     }
 }
