@@ -97,7 +97,7 @@ namespace HotelManagement.Application.Features.ReservationManagement.Commands
 
             var Any = await RoomReserveRepo.AnyAsync(
             r=> command.RoomsId.Contains(r.Id) && 
-            r.StartDate<=command.LastDay&&
+            r.StartDate<=command.LastDay||
              r.EndDate>=command.StartDay
             );
 
