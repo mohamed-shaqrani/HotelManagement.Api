@@ -1,4 +1,5 @@
-﻿using HotelManagement.Core.Entities.RoomManagement;
+﻿using HotelManagement.Core.Entities.Reservation;
+using HotelManagement.Core.Entities.RoomManagement;
 using HotelManagement.Core.Entities.UserManagement;
 using HotelManagement.Core.Enums;
 using Microsoft.EntityFrameworkCore;
@@ -17,6 +18,10 @@ public class AppDbContext : DbContext
     public DbSet<FacilityCategory> FacilityCategories { get; set; }
 
     public DbSet<FacilityRoom> FacilitiesRooms { get; set; }
+
+    public DbSet<Reservation> Reservations { get; set; }
+
+    public DbSet<RoomsReservation> RoomsReservations { get; set; }
 
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

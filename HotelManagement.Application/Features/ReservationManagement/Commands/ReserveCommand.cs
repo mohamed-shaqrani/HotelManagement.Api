@@ -45,13 +45,20 @@ namespace HotelManagement.Application.Features.ReservationManagement.Commands
                 UserId = command.GuestId,
                 Discount = command.Discount,
                 CostAfterDiscount = command.Cost - command.Discount,
+                Status = Core.Enums.ReservationStatus.Pending
             };
             await repo.AddAsync(reservation);
 
             await unitOfWork.SaveChangesAsync();
+            IEnumerable<RoomsReservation> reservations = CreateRoomsReservation(command.RoomsId, reservation);
+           await unitOfWork.GetRepository<RoomsReservation>().AddRangeAsync(reservations);
+           
+            if(command.StartDay.Date == DateTime.Today) 
+            {
+                await mediator.Publish(new RoomReserved() { RoomId = command.RoomsId, RoomSatus = RoomSatus.RoomBooked });
 
-           await mediator.Publish(new Reserved() { ReservationId = reservation.Id, RoomsId = command.RoomsId  });
-
+            }
+           await unitOfWork.SaveChangesAsync();
             return true;
 
 
@@ -61,39 +68,46 @@ namespace HotelManagement.Application.Features.ReservationManagement.Commands
 
         }
 
+        public IEnumerable<RoomsReservation> CreateRoomsReservation(IEnumerable<int> roomsids,Reservation reservation) 
+        {
+            var roomsreservations = new List<RoomsReservation>();
+            foreach (var roomid in roomsids) 
+            {
+                roomsreservations.Add(new RoomsReservation() 
+                {
+                     ReservationId = reservation.Id,
+                     RoomId = roomid,
+                     StartDate = reservation.FirstDay,
+                     EndDate = reservation.LastDay,
+                });
+            }
+
+            return roomsreservations;
+        }
+
+
         public async Task<bool> Validate(ReserveCommand command) 
         {
             if (command.GuestId <= 0 || command.NumberOfGuests <= 0 || command.Cost <= 0 || command.RoomsId.Count <= 0)
             {
                 return false;
             }
-            var repo = unitOfWork.GetRepository<Room>();
+           
+            var RoomReserveRepo = unitOfWork.GetRepository<RoomsReservation>();
 
-            var query = repo.GetAll(r => command.RoomsId.Contains(r.Id)).Select(r => new {r.Id,r.RoomStatus});
+            var Any = await RoomReserveRepo.AnyAsync(
+            r=> command.RoomsId.Contains(r.Id) && 
+            r.StartDate<=command.LastDay&&
+             r.EndDate>=command.StartDay
+            );
 
-            
-
-            var rooms = await query.ToListAsync();
-
-            bool today = command.StartDay.Date == DateTime.Today;
-
-            if(!(command.RoomsId.Count == rooms.Count)) 
+            if (Any) 
             {
                 return false;
             }
+           
 
-            if (today) 
-            {
-                foreach (var room in rooms) 
-                {
-                    if(room.RoomStatus == RoomSatus.RoomBooked || room.RoomStatus == RoomSatus.RoomNotActive) 
-                    {
-                        return false ;
-                    }
-                }
-
-                return true;
-            }
+            
 
             return true ;
         }

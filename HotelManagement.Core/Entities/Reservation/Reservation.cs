@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotelManagement.Core.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,7 @@ namespace HotelManagement.Core.Entities.Reservation
 
        public ICollection<RoomsReservation> RoomsReservations { get; set; }
 
+        public ReservationStatus Status { get; set; }
         public int RoomsNumbers { get; set; }
         public decimal Cost { get; set; }
 

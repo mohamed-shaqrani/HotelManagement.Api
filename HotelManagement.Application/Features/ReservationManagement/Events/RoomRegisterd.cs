@@ -18,7 +18,7 @@ namespace HotelManagement.Application.Features.ReservationManagement.Events
 
     public class RoomReserved : INotification 
     {
-        public int RoomId { get;set; }
+        public List<int> RoomId { get;set; } = new();
 
         public RoomSatus RoomSatus {  get; set; }
     }
