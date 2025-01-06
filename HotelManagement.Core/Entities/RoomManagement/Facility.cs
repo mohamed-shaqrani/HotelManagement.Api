@@ -12,6 +12,9 @@ namespace HotelManagement.Core.Entities.RoomManagement
         [ForeignKey("FacilityCategory")]
         public int FacilityCategoryID { get; set; }
 
+        public string FacilityName { get; set; }
+
+        public string FacilityDescription { get; set; }
 
     }
 }

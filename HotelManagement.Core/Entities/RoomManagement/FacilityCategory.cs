@@ -3,6 +3,6 @@
 
     public class FacilityCategory : BaseEntity
     {
-        public String FacilityCategoryName { get; set; }
+        public String FacilityCategoryName { get; set; } 
     }
 }
