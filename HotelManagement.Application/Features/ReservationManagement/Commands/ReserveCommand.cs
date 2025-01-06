@@ -93,12 +93,12 @@ namespace HotelManagement.Application.Features.ReservationManagement.Commands
                 return false;
             }
            
-            var RoomReserveRepo = unitOfWork.GetRepository<RoomsReservation>();
+            var RoomReserveRepo = unitOfWork.GetRepository<Reservation>();
 
             var Any = await RoomReserveRepo.AnyAsync(
-            r=> command.RoomsId.Contains(r.Id) && 
-            r.StartDate<=command.LastDay||
-             r.EndDate>=command.StartDay
+            r=>  
+            r.FirstDay<=command.LastDay||
+             r.LastDay>=command.StartDay
             );
 
             if (Any) 
