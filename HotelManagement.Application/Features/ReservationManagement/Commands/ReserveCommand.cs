@@ -51,24 +51,24 @@ namespace HotelManagement.Application.Features.ReservationManagement.Commands
             };
             await repo.AddAsync(reservation);
 
-            await mediator.Send(new RoomsReserveCommand() 
+       var Save =  await mediator.Send(new RoomsReserveCommand() 
             { ReservationId = reservation.Id, 
                 RoomsId = command.RoomsId,
                 FirstDay = reservation.FirstDay,
                 LastDay = reservation.LastDay,
             });
 
+            if (!Save) 
+            {
+                repo.ClearedTrackedChanges(reservation);
+                return false;
+            }
 
-
-            return true;
-                      
-
-
+            return true;    
             
-            
-            
-
         }
+
+
 
         public IEnumerable<RoomsReservation> CreateRoomsReservation(IEnumerable<int> roomsids,Reservation reservation) 
         {

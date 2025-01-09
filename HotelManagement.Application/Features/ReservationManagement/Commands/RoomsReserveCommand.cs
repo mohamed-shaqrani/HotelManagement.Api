@@ -71,10 +71,13 @@ namespace HotelManagement.Application.Features.ReservationManagement.Commands
             }
 
             var RoomsReserve = unitOfWork.GetRepository<RoomsReservation>();
-            var AnyReserve = await RoomsReserve.AnyAsync(r=>command.RoomsId.Contains(r.RoomId) && 
+            var AnyReserve = await RoomsReserve.AnyAsync(
+                r=>command.RoomsId.Contains(r.RoomId) && 
             (r.StartDate>=command.FirstDay && r.EndDate<=command.LastDay) || 
             (r.StartDate<command.FirstDay && r.EndDate> command.LastDay   ) ||
             (r.StartDate > command.FirstDay && r.EndDate > command.LastDay));
+
+
             if (AnyReserve) 
             {
                 return false;

@@ -24,6 +24,8 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseEnti
         await _dbSet.AddAsync(entity);
     }
 
+
+
     public async Task AddRangeAsync(IEnumerable<TEntity> entities)
     {
         foreach (var entity in entities)
@@ -140,5 +142,22 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseEnti
     public IQueryable<TEntity> GetAllWithInclude(Func<IQueryable<TEntity>, IQueryable<TEntity>> expression)
     {
         return expression(_dbSet);
+    }
+
+    public void ClearedTrackedChanges(TEntity entity) 
+    {
+        var local = _dbSet.Local.FirstOrDefault(e=>e.Id == entity.Id);
+
+        if(local is not null) 
+        {
+            _dbSet.Entry(local).State = EntityState.Detached;
+        }
+        
+
+
+    }
+   public void NoTracking() 
+    {
+        this._dbSet.AsNoTracking();
     }
 }

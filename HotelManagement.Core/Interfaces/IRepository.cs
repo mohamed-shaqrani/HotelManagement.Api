@@ -25,5 +25,9 @@ public interface IRepository<TEntity> where TEntity : BaseEntity
     Task<bool> DoesEntityExistAsync(int id);
     Task<bool> AnyAsync(Expression<Func<TEntity, bool>> expression);
 
+    void NoTracking();
+
+    void ClearedTrackedChanges(TEntity entity);
+
     //Task SaveChangesAsync();
 }
